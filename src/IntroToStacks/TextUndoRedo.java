@@ -1,6 +1,10 @@
 package IntroToStacks;
 
 public class TextUndoRedo {
+	public static void main(String[] args) {
+		TextUndoRedo TextUndoRedo = new TextUndoRedo();
+		TextUndoRedo.setup();
+	}
 	/* 
 	 * Create a JFrame with a JPanel and a JLabel.
 	 * 
@@ -13,5 +17,10 @@ public class TextUndoRedo {
 	 * off the Stack and added back to the JLabel.
 	 * 
 	 * */
+
+	void setup() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }
