@@ -1,10 +1,12 @@
 package IntroToStacks;
 
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.ArrayList;
+import java.util.Stack;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -18,9 +20,11 @@ public class TextUndoRedo implements ActionListener, KeyListener{
 	JLabel text = new JLabel();
 	JButton fontU = new JButton("A");
 	JButton fontD = new JButton("a");
+	Stack<String> textss = new Stack<String>();
+	Font font;
 	char newLetter;
 	String texts;
-	
+	int txtSize=10;
 	public static void main(String[] args) {
 		TextUndoRedo TextUndoRedo = new TextUndoRedo();
 		TextUndoRedo.setup();
@@ -47,7 +51,7 @@ public class TextUndoRedo implements ActionListener, KeyListener{
 		jf.setVisible(true);
 		jf.setTitle("Text editor 5000");
 		jf.setSize(1000, 1450);
-		
+		font = new Font("TimesRoman", Font.PLAIN, txtSize);
 		jf.addKeyListener(this);
 		jp.addKeyListener(this);
 		fontD.addActionListener(this);
@@ -64,11 +68,17 @@ public class TextUndoRedo implements ActionListener, KeyListener{
 		JButton ButtonPressed =  (JButton) e.getSource();
 		if(ButtonPressed == fontU) {
 			System.out.println("Bigger");
+			txtSize=txtSize+5;
+			text.setFont(font);
 			jp.requestFocus();
+			jp.repaint();
+
 		} 
 		if(ButtonPressed == fontD) {
+			txtSize=txtSize-5;
 			System.out.println("smaller");
 			jp.requestFocus();
+			jp.repaint();
 		}
 	}
 
@@ -88,8 +98,13 @@ public class TextUndoRedo implements ActionListener, KeyListener{
 	public void keyTyped(KeyEvent e) {
 		char newLetter = e.getKeyChar();
 		System.out.println(newLetter);
+		textss.push(""+newLetter);
+
 		texts = texts + newLetter;
 		text.setText(texts);
+		if(e.getKeyCode() == KeyEvent.VK_DELETE|| e.getKeyCode() == KeyEvent.VK_BACK_SPACE ||  e.getKeyCode() == KeyEvent.VK_LEFT ) {
+			
+		}
 	}
 	
 }
