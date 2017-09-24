@@ -14,9 +14,15 @@ public class IntroToHashMaps {
 	//2. Using a for-loop, add 500 entries to your HashMap. The key entry will be the 
 	//   current iteration of the loop (i). The value entry will be the square root of i.
 	for(int i=0; i<500 ;i++) {
-		if()
+		square= Math.sqrt(i);
 		roots.put(i,square);
+		
 	}
+	for(int i=0; i<500 ;i++) {
+		System.out.println("The square Root of "+i+" is "+roots.get(i));
+		
+	}
+	System.err.println(Math.sqrt(-1));
 	//3. Iterate through all the entries in your HashMap displaying the keys with their respective
 	//   square roots (values). Use the following format.
 	
@@ -27,4 +33,8 @@ public class IntroToHashMaps {
 	}
 }
 
- 
+
+
+
+
+

@@ -85,12 +85,13 @@ public class TextUndoRedo implements KeyListener {
 
 		}
 		else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-			
+			if(textss.size()!=0) {
 			System.out.println("undo");
 			String k= textss.pop();
 			texts=texts+k;
 			poped.add(k);
 			text.setText(texts);
+			}
 		} 
 		else {
 			System.out.println("last character: " + texts.substring(texts.length() - 1));
