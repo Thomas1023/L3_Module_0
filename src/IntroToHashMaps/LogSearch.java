@@ -11,6 +11,7 @@ import javax.swing.JPanel;
 
 public class LogSearch implements ActionListener {
 	int ID;
+	boolean re = true;
 	JPanel JP = new  JPanel();
 	JFrame JF = new  JFrame();
 	JButton B1 = new JButton("add entry");
@@ -75,34 +76,36 @@ public class LogSearch implements ActionListener {
 			hash.put(ID, NewName);
 		} if(ButtonPressed == B2) {
 			String OldId = JOptionPane.showInputDialog("Enter id");
-	
-					
+			ID=Integer.parseInt(OldId);
+			if(re) {
+					System.out.println("hi");
 				
-					System.out.println(hash.get(OldId));
-				
-		}if(ButtonPressed == B3) {
-			for (int i = 0; i < 1000; i++) {
-				if(hash.get(i).equals(null)) {
-					
-				}else {
-					System.out.println("id: "+i+"  Name: "+hash.get(i));
-				}
-				
+					System.out.println(hash.get(ID));
+			}else {
+				System.out.println("nobody is registerd under 420");
 			}
-			System.out.println();
+		}if(ButtonPressed == B3) {
+			
+		
+			
+//			for (int i = 0; i < 1000; i++) {
+//				if(hash.get(i).equals(null)) {
+//					
+//				}else {
+//					System.out.println("id: "+i+"  Name: "+hash.get(i));
+//				}
+//				
+//			}
+			System.out.println("id 420 is "+hash.get(420));
 		}if(ButtonPressed == B4) {
 			String NewId = JOptionPane.showInputDialog("Enter id");		
 			ID=Integer.parseInt(NewId);
-			for (int i = 0; i < 1000; i++) {
-			if(hash.get(i).equals(null)) {
-				
-			}else {
-				hash.remove(i);
-			}
+			hash.remove(ID);
+			re=false;
 			}
 		}
 		
 		
 	}
-	}
+	
 
